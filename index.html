@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="ad.size" content="width=300,height=250">
+  <title>Coca-Cola Beef Polao 300x250</title>
+  <script>var clickTag = "https://zaap.bio/TouhidDesign";</script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      -webkit-text-size-adjust: 100%
+    }
+
+    /* Fixed 300x250, centered on the page */
+    #ad {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #000;
+      cursor: pointer;
+      isolation: isolate;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      touch-action: manipulation;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-mask-image: -webkit-radial-gradient(#fff, #000)
+    }
+
+    #ad::after {
+      content: "";
+      border-radius: 18px;
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(0, 0, 0, .55);
+      pointer-events: none;
+      z-index: 9
+    }
+
+    #bg {
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      width: 340px;
+      height: 290px;
+      -webkit-filter: blur(14px) brightness(.75) saturate(1.2);
+      filter: blur(14px) brightness(.75) saturate(1.2);
+      z-index: 1;
+      background: #3a2a1c url(poster.jpg) center/cover no-repeat
+    }
+
+    #vid {
+      position: absolute;
+      left: 0;
+      top: 40px;
+      width: 300px;
+      height: 169px;
+      object-fit: contain;
+      background: #000;
+      display: block;
+      z-index: 2;
+      pointer-events: none
+    }
+
+    #vid::-webkit-media-controls,
+    #vid::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none
+    }
+
+    /* "Ads by TouhidDesign" badge, top-left: logo only, text slides out on hover */
+    #by {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #0f172a;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      overflow: hidden;
+      z-index: 6;
+      font-family: Arial, Helvetica, sans-serif
+    }
+
+    #by img {
+      width: 18px;
+      height: 18px;
+      margin: 1px;
+      display: block;
+      flex: none;
+      border-radius: 50%
+    }
+
+    #by span {
+      max-width: 0;
+      opacity: 0;
+      white-space: nowrap;
+      font-size: 11px;
+      line-height: 20px;
+      transition: max-width .25s ease, opacity .2s ease, padding .25s ease
+    }
+
+    #by:hover span,
+    #by.open span,
+    #by:focus-visible span {
+      max-width: 110px;
+      opacity: 1;
+      padding: 0 8px 0 3px
+    }
+
+    /* Sound toggle, top-right */
+    #snd {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: background .15s, transform .15s;
+      -webkit-appearance: none;
+      appearance: none;
+      padding: 0
+    }
+
+    #snd::before {
+      content: "";
+      position: absolute;
+      inset: -7px
+    }
+
+    #snd:hover {
+      background: rgba(0, 0, 0, .8)
+    }
+
+    #snd:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px
+    }
+
+    #snd svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      stroke: #fff;
+      pointer-events: none
+    }
+
+    #snd .on {
+      display: none
+    }
+
+    #snd.unmuted .on {
+      display: block
+    }
+
+    #snd.unmuted .off {
+      display: none
+    }
+
+    #snd:not(.unmuted) {
+      animation: pulse 2s ease-in-out 1s 3
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .7)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0)
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      #snd:not(.unmuted) {
+        animation: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ad">
+    <canvas id="bg" width="68" height="58"></canvas>
+    <video id="vid" src="video.mp4" poster="poster.jpg" autoplay muted loop playsinline webkit-playsinline
+      x-webkit-airplay="deny" disablepictureinpicture disableremoteplayback
+      controlslist="nodownload nofullscreen noremoteplayback" preload="auto" tabindex="-1"></video>
+    <a id="by" href="https://TouhidDesign.digital/" target="_blank" rel="noopener" aria-label="Ads by TouhidDesign">
+      <img src="favicon.ico" alt="TouhidDesign">
+      <span>Ads by TouhidDesign</span>
+    </a>
+    <button id="snd" type="button" aria-label="Unmute video" title="Unmute">
+      <svg class="off" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="none" d="M3 9v6h4l5 5V4L7 9H3z" />
+        <path fill="none" stroke-width="2" stroke-linecap="round" d="M16 9l5 6M21 9l-5 6" />
+      </svg>
+      <svg class="on" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="none" d="M3 9v6h4l5 5V4L7 9H3z" />
+        <path fill="none" stroke-width="2" stroke-linecap="round" d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13" />
+      </svg>
+    </button>
+  </div>
+  <script>
+    (function () {
+      var doc = document, v = doc.getElementById('vid'), btn = doc.getElementById('snd'), ad = doc.getElementById('ad'), cv = doc.getElementById('bg');
+      var by = doc.getElementById('by');
+      var inView = true;
+
+      /* ---- autoplay (muted + inline is allowed on iOS and Android) ---- */
+      v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+      function play() { try { var p = v.play(); if (p && p.catch) p.catch(function () { }); } catch (e) { } }
+      play();
+      v.addEventListener('canplay', play);
+      v.addEventListener('loadeddata', play);
+      /* if the browser blocked autoplay (e.g. iOS Low Power Mode), start on first touch */
+      var kick = function () { if (v.paused) play(); };
+      ['touchstart', 'pointerdown', 'click', 'keydown'].forEach(function (ev) { doc.addEventListener(ev, kick, { passive: true }); });
+      /* loop fallback for old WebViews */
+      v.addEventListener('ended', function () { v.currentTime = 0; play(); });
+
+      /* ---- blurred background painted from the video (small canvas, cheap) ---- */
+      var x = null; try { x = cv.getContext('2d'); } catch (e) { }
+      function paint() {
+        if (x && v.videoWidth && !v.paused && inView) {
+          try {
+            var cw = cv.width, ch = cv.height, k = Math.max(cw / v.videoWidth, ch / v.videoHeight), w = v.videoWidth * k, h = v.videoHeight * k;
+            x.drawImage(v, (cw - w) / 2, (ch - h) / 2, w, h);
+          } catch (e) { x = null; }
+        }
+        requestAnimationFrame(paint);
+      }
+      if (x) requestAnimationFrame(paint);
+
+      /* ---- save battery: pause when hidden or scrolled out of view ---- */
+      doc.addEventListener('visibilitychange', function () { doc.hidden ? v.pause() : (inView && play()); });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) {
+          inView = en[0].isIntersecting; inView ? play() : v.pause();
+        }, { threshold: 0.25 }).observe(ad);
+      }
+
+      /* ---- sound toggle (user gesture required to unmute) ---- */
+      function setUi() {
+        var m = v.muted; btn.classList.toggle('unmuted', !m);
+        var l = m ? 'Unmute video' : 'Mute video'; btn.setAttribute('aria-label', l); btn.title = l;
+      }
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation(); e.preventDefault();
+        v.muted = !v.muted; if (!v.muted) { v.volume = 1; }
+        setUi(); play();
+      });
+      v.addEventListener('volumechange', setUi);
+
+      /* ---- "Ads by TouhidDesign" badge: opens https://zaap.bio/TouhidDesign, never the click-through.
+             On touch screens the first tap shows the text, the second opens the link. ---- */
+      var touch = window.matchMedia && matchMedia('(hover: none)').matches;
+      by.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (touch && !by.classList.contains('open')) {
+          e.preventDefault(); by.classList.add('open');
+          setTimeout(function () { by.classList.remove('open'); }, 3000);
+        }
+      });
+
+      /* ---- click-through ---- */
+      ad.addEventListener('click', function () {
+        if (v.paused) { play(); return; }
+        var u = window.clickTag || '#'; var w = null;
+        try { w = window.open(u, '_blank'); } catch (e) { }
+        if (!w && u !== '#') { try { window.top.location.href = u; } catch (e) { window.location.href = u; } }
+      });
+    })();
+  </script>
+</body>
+
+</html>
